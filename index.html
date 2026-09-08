@@ -1,266 +1,937 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Le Thanh Long — Portfolio</title>
-    <meta name="description" content="Le Thanh Long — Visual Storyteller & AI Filmmaker. Crafting cinematic AI short films." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Le Thanh Long — Visual Storyteller & AI Filmmaker</title>
+    <meta
+      name="description"
+      content="Portfolio of Le Thanh Long — Visual Storyteller & AI Filmmaker. 35.6M+ views, 43.2K YouTube Subscribers, Top 8 Vietfilm AI Talent 2026, Top 2 Tâm Trí Lực."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       :root {
-        --bg: #0b0f19;
-        --card: rgba(255, 255, 255, 0.06);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.65);
-        --line: rgba(255, 255, 255, 0.12);
-        --accent: #7c3aed;
-        --accent2: #22d3ee;
-        --max: 1024px;
+        --bg-black: #030407;
+        --card-bg: rgba(13, 15, 21, 0.88);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --card-hover: rgba(168, 85, 247, 0.5);
+        --text-pure: #ffffff;
+        --text-sub: #94a3b8;
+        --accent-grad: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+        --max-w: 1140px;
         --radius: 16px;
       }
-      * { box-sizing: border-box; }
-      body {
+
+      * {
+        box-sizing: border-box;
         margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-        color: var(--text);
-        background:
-          radial-gradient(800px 500px at 10% 10%, rgba(124, 58, 237, 0.25), transparent 60%),
-          radial-gradient(800px 500px at 90% 30%, rgba(34, 211, 238, 0.18), transparent 60%),
-          var(--bg);
+        padding: 0;
       }
-      a { color: inherit; text-decoration: none; }
-      a:hover { text-decoration: underline; }
 
-      .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 70px; }
+      html {
+        scroll-behavior: smooth;
+      }
 
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-black);
+        color: var(--text-pure);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .wrap {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 24px 20px 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 75px;
+      }
+
+      /* Navigation */
       .nav {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 14px 16px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.04);
-        border-radius: var(--radius);
-        backdrop-filter: blur(10px);
-        position: sticky; top: 12px; z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 28px;
+        background: rgba(3, 4, 7, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--card-border);
+        border-radius: 999px;
+        position: sticky;
+        top: 16px;
+        z-index: 100;
       }
-      .nav .left { display: flex; gap: 12px; align-items: center; }
-      .badge { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
-      .nav .links { display: flex; gap: 14px; font-size: 14px; color: var(--muted); flex-wrap: wrap; }
 
-      .hero { padding: 44px 6px 18px; }
-      .hero h1 { margin: 0; font-size: 44px; letter-spacing: -0.03em; line-height: 1.05; }
-      .hero p { margin: 14px 0 0; color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 72ch; }
+      .brand-title {
+        font-family: "Outfit", sans-serif;
+        font-weight: 800;
+        font-size: 1.15rem;
+        letter-spacing: 0.04em;
+        background: var(--accent-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-      .cta { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-      .btn {
-        display: inline-flex; align-items: center; gap: 10px;
-        padding: 10px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.04);
-        color: var(--text);
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-sub);
+      }
+
+      .nav-links a:hover {
+        color: #fff;
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding-top: 10px;
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--card-border);
+        border-radius: 999px;
+        color: #d8b4fe;
+        width: fit-content;
+      }
+
+      .hero h1 {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+
+      .hero h1 span {
+        background: var(--accent-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        font-size: 1.12rem;
+        color: var(--text-sub);
+        max-width: 760px;
+        line-height: 1.7;
+      }
+
+      .hero p b {
+        color: #fff;
         font-weight: 600;
       }
-      .btn.primary {
-        background: linear-gradient(135deg, rgba(124,58,237,0.85), rgba(34,211,238,0.35));
-        border-color: rgba(255,255,255,0.16);
-      }
 
-      .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 18px; }
-      .card {
-        grid-column: span 6;
-        border: 1px solid var(--line);
-        background: var(--card);
+      /* Key Metrics */
+      .stats-bar {
+        display: flex;
+        gap: 36px;
+        margin-top: 6px;
+        flex-wrap: wrap;
+        padding: 18px 24px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--card-border);
         border-radius: var(--radius);
-        padding: 16px;
+        width: fit-content;
       }
-      @media (max-width: 820px) { .card { grid-column: span 12; } }
 
-      .section { margin-top: 22px; }
-      .section h2 { margin: 0 0 12px; font-size: 18px; letter-spacing: -0.01em; }
-      .muted { color: var(--muted); }
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+      }
 
-      .proj { display: flex; flex-direction: column; gap: 8px; }
-      .proj h3 { margin: 0; font-size: 16px; }
-      .proj .meta { font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
-      .pill { font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+      .stat-num {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.9rem;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+      }
 
-      .footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-      .kpi { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-      .small { font-size: 13px; }
+      .stat-lbl {
+        font-size: 0.78rem;
+        color: var(--text-sub);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .btn-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: 12px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: 1px solid var(--card-border);
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+        transition: 0.2s ease;
+      }
+
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: #fff;
+        color: #000;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background: #e2e8f0;
+        color: #000;
+      }
+
+      /* Section Common */
+      .section-v {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .section-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.85rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .section-subtitle {
+        color: var(--text-sub);
+        font-size: 0.92rem;
+        margin-top: 4px;
+      }
+
+      /* 4 Award Projects Grid (9:16 Vertical) */
+      .grid-awards-9-16 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .award-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .award-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--card-hover);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.9), 0 0 24px rgba(168, 85, 247, 0.2);
+      }
+
+      /* Clean Numbered Visual Thumbnail 9:16 */
+      .award-thumb-box {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        background: #090b12;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+        background-image:
+          radial-gradient(circle at 100% 0%, rgba(168, 85, 247, 0.18) 0%, transparent 50%),
+          radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.12) 0%, transparent 60%);
+      }
+
+      .badge-pill {
+        align-self: flex-start;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: rgba(168, 85, 247, 0.9);
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .badge-pill.gold {
+        background: rgba(245, 158, 11, 0.95);
+      }
+
+      .badge-pill.cyan {
+        background: rgba(6, 182, 212, 0.9);
+      }
+
+      .thumb-number {
+        position: absolute;
+        bottom: 24px;
+        right: 18px;
+        font-family: "Outfit", sans-serif;
+        font-size: 5.5rem;
+        font-weight: 900;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.05);
+        user-select: none;
+        letter-spacing: -0.04em;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .award-card:hover .thumb-number {
+        color: rgba(168, 85, 247, 0.18);
+        transform: scale(1.08);
+      }
+
+      .thumb-content-mid {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .thumb-big-title {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.35rem;
+        font-weight: 800;
+        line-height: 1.15;
+        color: #fff;
+      }
+
+      .thumb-link-btn {
+        position: relative;
+        z-index: 2;
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 8px 14px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+        transition: background 0.2s ease;
+      }
+
+      .award-card:hover .thumb-link-btn {
+        background: #fff;
+        color: #000;
+      }
+
+      .award-info {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: #080a0f;
+        flex-grow: 1;
+      }
+
+      .award-info h3 {
+        font-size: 0.98rem;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.35;
+      }
+
+      .award-info p {
+        font-size: 0.8rem;
+        color: var(--text-sub);
+        line-height: 1.45;
+      }
+
+      /* Horizontal Slider for YouTube Shorts */
+      .slider-controls {
+        display: flex;
+        gap: 10px;
+      }
+
+      .slider-arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--card-border);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .slider-arrow:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .horizontal-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 6px 4px 18px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+      }
+
+      .horizontal-track::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .horizontal-track::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+      }
+
+      .yt-card {
+        flex: 0 0 270px;
+        scroll-snap-align: start;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .yt-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--card-hover);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.9), 0 0 20px rgba(168, 85, 247, 0.2);
+      }
+
+      .yt-thumb-box {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        background: #000;
+        overflow: hidden;
+      }
+
+      .yt-thumb-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .yt-card:hover .yt-thumb-box img {
+        transform: scale(1.06);
+      }
+
+      .yt-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(3, 4, 7, 0.25) 0%, rgba(3, 4, 7, 0.88) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14px;
+      }
+
+      .play-btn {
+        align-self: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-size: 1.25rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        transition: transform 0.25s ease, background 0.25s ease;
+      }
+
+      .yt-card:hover .play-btn {
+        transform: scale(1.15);
+        background: #fff;
+      }
+
+      .yt-info {
+        padding: 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: #080a0f;
+        flex-grow: 1;
+      }
+
+      .yt-info h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #f1f5f9;
+        line-height: 1.35;
+      }
+
+      /* 2-Column Grid for Workflow & Skills */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 6px;
+      }
+
+      .tag {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--card-border);
+        color: #cbd5e1;
+      }
+
+      /* Footer */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--card-border);
+        padding-top: 30px;
+        color: var(--text-sub);
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      @media (max-width: 1024px) {
+        .grid-awards-9-16 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .grid-awards-9-16,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          display: none;
+        }
+        .yt-card {
+          flex: 0 0 240px;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="wrap">
+      <!-- Navigation -->
       <header class="nav">
-        <div class="left">
-          <strong>Le Thanh Long</strong>
-          <span class="badge">| Visual Storyteller & AI Filmmaker 🎞️ | Crafting cinematic AI short films 🎬</span>
-        </div>
-        <nav class="links">
-          <a href="#projects">Projects</a>
-          <a href="#highlights">Highlights</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
+        <div class="brand-title">LE THANH LONG</div>
+        <nav class="nav-links">
+          <a href="#awards">Awarded Films</a>
+          <a href="#viral-shorts">Viral Shorts</a>
+          <a href="#workflow">Workflow</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
+      <!-- Hero Section -->
       <section class="hero">
+        <div class="hero-tag">🎬 Visual Storyteller & AI Filmmaker</div>
         <h1>
-          Visual storytelling,<br />
-          powered by AI.
+          Dark cinematic visuals,<br />
+          <span>driven by AI narrative.</span>
         </h1>
         <p>
-          I’m <b>Le Thanh Long</b>, a <b>Visual Storyteller & AI Filmmaker</b> crafting cinematic AI short films—from concept and prompt design to visuals, editing, and final delivery.
-          I’ve earned <b>Top 8 at Vietfilm AI Talent 2026</b> and <b>Top 2 at Tâm Trí Lực</b>, and I love turning ideas into emotionally-driven visuals that feel like real cinema.
-          I’m open to collaborations with creators, brands, and teams for AI film, creative campaigns, and visual experiments.
+          I am <b>Le Thanh Long</b>, an AI filmmaker and visual director crafting narrative-driven short films and viral content. Bridging classical three-act dramaturgy with advanced generative cinematography, multi-shot character consistency, and sound design.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Contact</a>
-          <a class="btn" href="https://www.youtube.com/@MortalModee" target="_blank" rel="noreferrer">YouTube</a>
-          <a class="btn" href="https://www.instagram.com/longhe.aifilm/" target="_blank" rel="noreferrer">Instagram</a>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <span class="stat-num">35.6M+</span>
+            <span class="stat-lbl">YouTube Views</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">43.2K</span>
+            <span class="stat-lbl">Subscribers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">Top 8</span>
+            <span class="stat-lbl">Vietfilm AI Talent 2026</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">Top 2</span>
+            <span class="stat-lbl">Tâm Trí Lực Contest</span>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#awards">View Selected Works</a>
+          <a class="btn" href="#viral-shorts">Explore Viral Shorts</a>
+          <a class="btn" href="https://www.youtube.com/@MortalModee" target="_blank" rel="noreferrer">
+            YouTube (@MortalModee)
+          </a>
+          <a class="btn" href="#contact">Get in Touch</a>
         </div>
       </section>
 
-      <section class="grid section" id="highlights">
-        <div class="card">
-          <h2>Highlights</h2>
-          <p class="muted small">Quick overview for new visitors.</p>
-          <div class="kpi">
-            <span class="pill">Top 8 — Vietfilm AI Talent 2026</span>
-            <span class="pill">Top 2 — Tâm Trí Lực</span>
-            <span class="pill">AI Short Films</span>
-            <span class="pill">Cinematic Visuals</span>
+      <!-- SECTION: 4 AWARD WORKS (9:16 VERTICAL THUMBNAILS NUMBERED 01 - 04) -->
+      <section class="section-v" id="awards">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Award-Winning Works & Competition Films</h2>
+            <p class="section-subtitle">
+              Official competition selections and awarded films formatted in vertical 9:16 cinema ratio.
+            </p>
           </div>
         </div>
 
-        <div class="card">
-          <h2>What I do</h2>
-          <p class="muted small">
-            • AI filmmaking: concept → prompts → visuals → edit → final<br />
-            • Short-form cinematic reels & visual experiments<br />
-            • Creative direction + workflow mindset for speed & quality
-          </p>
-        </div>
-      </section>
+        <div class="grid-awards-9-16">
+          <!-- Award 1 -->
+          <div class="award-card">
+            <div class="award-thumb-box">
+              <span class="badge-pill">Top 8 — Vietfilm 2026</span>
+              <div class="thumb-content-mid">
+                <span style="font-size: 0.72rem; color: #a855f7; font-weight: 700; text-transform: uppercase;">Cinematic Short</span>
+                <div class="thumb-big-title">Vietfilm AI Entry #1</div>
+              </div>
+              <a class="thumb-link-btn" href="https://www.instagram.com/reel/DcGspRAq8M9/" target="_blank" rel="noreferrer">
+                Watch Reel ↗
+              </a>
+              <div class="thumb-number">01</div>
+            </div>
+            <div class="award-info">
+              <h3>Vietfilm AI Talent 2026 — Master Film</h3>
+              <p>National Top 8 finalist. Explores high-tension pacing, emotional depth, and atmospheric chiaroscuro lighting.</p>
+            </div>
+          </div>
 
-      <section class="grid section" id="projects">
-        <div class="card proj">
-          <h2>Featured Projects</h2>
-          <p class="muted small">Selected videos and competition works.</p>
-        </div>
+          <!-- Award 2 -->
+          <div class="award-card">
+            <div class="award-thumb-box">
+              <span class="badge-pill">Top 8 — Vietfilm 2026</span>
+              <div class="thumb-content-mid">
+                <span style="font-size: 0.72rem; color: #a855f7; font-weight: 700; text-transform: uppercase;">Visual Rhythm</span>
+                <div class="thumb-big-title">Vietfilm AI Entry #2</div>
+              </div>
+              <a class="thumb-link-btn" href="https://www.instagram.com/reel/DbvuMMSKnSR/" target="_blank" rel="noreferrer">
+                Watch Reel ↗
+              </a>
+              <div class="thumb-number">02</div>
+            </div>
+            <div class="award-info">
+              <h3>Vietfilm AI Talent 2026 — Sequence #2</h3>
+              <p>Showcases rapid dynamic cuts, fluid camera tracking, and sound-synchronized visual transitions.</p>
+            </div>
+          </div>
 
-        <div class="card proj">
-          <h3>SeaArt AI — Competition Entry</h3>
-          <div class="meta">
-            <span class="pill">AI Film</span>
-            <span class="pill">Competition</span>
-            <span class="pill">Instagram Reel</span>
+          <!-- Award 3 -->
+          <div class="award-card">
+            <div class="award-thumb-box">
+              <span class="badge-pill gold">Top 2 — Tâm Trí Lực</span>
+              <div class="thumb-content-mid">
+                <span style="font-size: 0.72rem; color: #fbbf24; font-weight: 700; text-transform: uppercase;">Runner-Up Film</span>
+                <div class="thumb-big-title">Tâm Trí Lực Film</div>
+              </div>
+              <a class="thumb-link-btn" href="https://www.facebook.com/share/r/194V6XnVBR/" target="_blank" rel="noreferrer">
+                Watch on FB ↗
+              </a>
+              <div class="thumb-number">03</div>
+            </div>
+            <div class="award-info">
+              <h3>Tâm Trí Lực Contest — 2nd Place</h3>
+              <p>Award-winning narrative focused on character empathy, organic voiceover integration, and cinematic composition.</p>
+            </div>
           </div>
-          <p class="muted small">
-            Competition entry exploring cinematic visuals created with AI—focused on mood, pacing, and storytelling.
-          </p>
-          <div class="meta">
-            <a href="https://www.instagram.com/reel/DaDoSzlKHVa/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" rel="noreferrer">Watch</a>
-          </div>
-        </div>
 
-        <div class="card proj">
-          <h3>Vietfilm AI Talent 2026 — Top 8 (Video #1)</h3>
-          <div class="meta">
-            <span class="pill">AI Short Film</span>
-            <span class="pill">Vietfilm</span>
-            <span class="pill">Top 8</span>
-          </div>
-          <p class="muted small">
-            One of the reels that helped me reach Top 8 at Vietfilm AI Talent 2026.
-          </p>
-          <div class="meta">
-            <a href="https://www.instagram.com/reel/DcGspRAq8M9/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" rel="noreferrer">Watch</a>
-          </div>
-        </div>
-
-        <div class="card proj">
-          <h3>Vietfilm AI Talent 2026 — Top 8 (Video #2)</h3>
-          <div class="meta">
-            <span class="pill">AI Short Film</span>
-            <span class="pill">Vietfilm</span>
-            <span class="pill">Top 8</span>
-          </div>
-          <p class="muted small">
-            A second Top 8-winning reel—cinematic style, strong visual rhythm, and atmosphere.
-          </p>
-          <div class="meta">
-            <a href="https://www.instagram.com/reel/DbvuMMSKnSR/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" rel="noreferrer">Watch</a>
-          </div>
-        </div>
-
-        <div class="card proj">
-          <h3>Tâm Trí Lực — Top 2</h3>
-          <div class="meta">
-            <span class="pill">Award</span>
-            <span class="pill">Top 2</span>
-            <span class="pill">Facebook</span>
-          </div>
-          <p class="muted small">
-            Award-winning video that earned Top 2 at Tâm Trí Lực—story-first execution with cinematic framing.
-          </p>
-          <div class="meta">
-            <a href="https://www.facebook.com/share/r/194V6XnVBR/" target="_blank" rel="noreferrer">Watch</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid section" id="about">
-        <div class="card">
-          <h2>About</h2>
-          <p class="muted small">
-            I craft cinematic AI short films with a storytelling-first mindset. I care about mood, pacing, and emotion—then build the workflow to deliver fast without losing quality.
-          </p>
-          <div class="kpi">
-            <span class="pill">Open to: Collaborations</span>
-            <span class="pill">Style: Dark / Cinematic</span>
-            <span class="pill">Focus: AI Film + Visual Experiments</span>
-          </div>
-        </div>
-
-        <div class="card" id="skills">
-          <h2>Skills</h2>
-          <p class="muted small">Core skills (you can edit anytime):</p>
-          <div class="kpi">
-            <span class="pill">Prompt Engineering</span>
-            <span class="pill">AI Filmmaking Workflow</span>
-            <span class="pill">Visual Storytelling</span>
-            <span class="pill">Video Editing</span>
-            <span class="pill">Creative Direction</span>
-            <span class="pill">Short-form Content</span>
-            <span class="pill">Cinematic Composition</span>
-            <span class="pill">Rapid Prototyping</span>
-            <span class="pill">Content Systems</span>
+          <!-- Award 4 -->
+          <div class="award-card">
+            <div class="award-thumb-box">
+              <span class="badge-pill cyan">SeaArt Contest</span>
+              <div class="thumb-content-mid">
+                <span style="font-size: 0.72rem; color: #22d3ee; font-weight: 700; text-transform: uppercase;">Visual Experiment</span>
+                <div class="thumb-big-title">SeaArt AI Entry</div>
+              </div>
+              <a class="thumb-link-btn" href="https://www.instagram.com/reel/DaDoSzlKHVa/" target="_blank" rel="noreferrer">
+                Watch Reel ↗
+              </a>
+              <div class="thumb-number">04</div>
+            </div>
+            <div class="award-info">
+              <h3>SeaArt AI Competition Entry</h3>
+              <p>Experimental visual showcase testing multi-shot continuity, specialized prompt pipelines, and immersive SFX.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="contact">
-        <div class="card">
-          <h2>Contact</h2>
-          <p class="muted small">
-            Email: <a href="mailto:ltl.21s4@gmail.com">ltl.21s4@gmail.com</a><br />
-            YouTube: <a href="https://www.youtube.com/@MortalModee" target="_blank" rel="noreferrer">@MortalModee</a><br />
-            Instagram: <a href="https://www.instagram.com/longhe.aifilm/" target="_blank" rel="noreferrer">@longhe.aifilm</a>
-          </p>
+      <!-- SECTION: HORIZONTAL SLIDER FOR VIRAL YOUTUBE SHORTS -->
+      <section class="section-v" id="viral-shorts">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Viral YouTube Shorts (Multi-Million Views)</h2>
+            <p class="section-subtitle">
+              Selected from <b>43.2K subscribers</b> and over <b>35.6M lifetime views</b>. Click any card to watch directly on YouTube.
+            </p>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-arrow" onclick="scrollSlider(-1)" aria-label="Previous">❮</button>
+            <button class="slider-arrow" onclick="scrollSlider(1)" aria-label="Next">❯</button>
+          </div>
+        </div>
+
+        <div class="horizontal-track" id="videoTrack">
+          <!-- Short 1 -->
+          <div class="yt-card">
+            <a href="https://youtube.com/shorts/BMt4-4Utyfs" target="_blank" rel="noreferrer">
+              <div class="yt-thumb-box">
+                <img
+                  src="https://img.youtube.com/vi/BMt4-4Utyfs/hqdefault.jpg"
+                  alt="Live-Action Cinematic Concept"
+                  loading="lazy"
+                />
+                <div class="yt-overlay">
+                  <span class="badge-pill" style="background: #e11d48;">Viral Short</span>
+                  <div class="play-btn">▶</div>
+                  <span style="font-size: 0.78rem; color: #cbd5e1;">Watch on YouTube ↗</span>
+                </div>
+              </div>
+            </a>
+            <div class="yt-info">
+              <h4>Live-Action Cinematic Concept #1</h4>
+              <div style="font-size: 0.8rem; color: var(--text-sub);">
+                Multi-Million Views • <span style="color: #c084fc;">YouTube Shorts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Short 2 -->
+          <div class="yt-card">
+            <a href="https://youtube.com/shorts/wVU_E0uqYXE" target="_blank" rel="noreferrer">
+              <div class="yt-thumb-box">
+                <img
+                  src="https://img.youtube.com/vi/wVU_E0uqYXE/hqdefault.jpg"
+                  alt="Live-Action Character Concept"
+                  loading="lazy"
+                />
+                <div class="yt-overlay">
+                  <span class="badge-pill" style="background: #e11d48;">Viral Short</span>
+                  <div class="play-btn">▶</div>
+                  <span style="font-size: 0.78rem; color: #cbd5e1;">Watch on YouTube ↗</span>
+                </div>
+              </div>
+            </a>
+            <div class="yt-info">
+              <h4>Live-Action Character Adaptation</h4>
+              <div style="font-size: 0.8rem; color: var(--text-sub);">
+                Multi-Million Views • <span style="color: #c084fc;">YouTube Shorts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Short 3 -->
+          <div class="yt-card">
+            <a href="https://youtube.com/shorts/xR9I2jbKBbY" target="_blank" rel="noreferrer">
+              <div class="yt-thumb-box">
+                <img
+                  src="https://img.youtube.com/vi/xR9I2jbKBbY/hqdefault.jpg"
+                  alt="Childhood Arc Narrative"
+                  loading="lazy"
+                />
+                <div class="yt-overlay">
+                  <span class="badge-pill" style="background: #e11d48;">Viral Short</span>
+                  <div class="play-btn">▶</div>
+                  <span style="font-size: 0.78rem; color: #cbd5e1;">Watch on YouTube ↗</span>
+                </div>
+              </div>
+            </a>
+            <div class="yt-info">
+              <h4>Childhood Arc: Dark Tone Narrative</h4>
+              <div style="font-size: 0.8rem; color: var(--text-sub);">
+                Multi-Million Views • <span style="color: #c084fc;">YouTube Shorts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Short 4 -->
+          <div class="yt-card">
+            <a href="https://youtube.com/shorts/9UJfvGbq8d4" target="_blank" rel="noreferrer">
+              <div class="yt-thumb-box">
+                <img
+                  src="https://img.youtube.com/vi/9UJfvGbq8d4/hqdefault.jpg"
+                  alt="Camera Motion & Pacing"
+                  loading="lazy"
+                />
+                <div class="yt-overlay">
+                  <span class="badge-pill" style="background: #e11d48;">Viral Short</span>
+                  <div class="play-btn">▶</div>
+                  <span style="font-size: 0.78rem; color: #cbd5e1;">Watch on YouTube ↗</span>
+                </div>
+              </div>
+            </a>
+            <div class="yt-info">
+              <h4>Camera Motion & Dynamic Pacing</h4>
+              <div style="font-size: 0.8rem; color: var(--text-sub);">
+                Multi-Million Views • <span style="color: #c084fc;">YouTube Shorts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Short 5 -->
+          <div class="yt-card">
+            <a href="https://youtube.com/shorts/ZFuZbwUC6Jw" target="_blank" rel="noreferrer">
+              <div class="yt-thumb-box">
+                <img
+                  src="https://img.youtube.com/vi/ZFuZbwUC6Jw/hqdefault.jpg"
+                  alt="Sound Design & Visual Rhythm"
+                  loading="lazy"
+                />
+                <div class="yt-overlay">
+                  <span class="badge-pill" style="background: #e11d48;">Viral Short</span>
+                  <div class="play-btn">▶</div>
+                  <span style="font-size: 0.78rem; color: #cbd5e1;">Watch on YouTube ↗</span>
+                </div>
+              </div>
+            </a>
+            <div class="yt-info">
+              <h4>Audio Synchronization & Rhythm Cut</h4>
+              <div style="font-size: 0.8rem; color: var(--text-sub);">
+                Multi-Million Views • <span style="color: #c084fc;">YouTube Shorts</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- SECTION: PRODUCTION WORKFLOW & SKILLS -->
+      <section class="section-v" id="workflow">
+        <h2 class="section-title">Production Workflow & Core Skills</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="font-size: 1.15rem;">End-to-End AI Film Pipeline</h3>
+            <p style="color: var(--text-sub); font-size: 0.92rem;">
+              • <b>Screenplay & Staging:</b> Classical three-act narrative design, visual beats, and high-retention opening hooks.<br />
+              • <b>Prompt Architecture:</b> Structured prompt systems for consistent camera geometry, dramatic lighting, and character fidelity.<br />
+              • <b>Post-Production:</b> Precision editorial rhythm, atmospheric color grading, and layered foley & sound effects (SFX).
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.15rem;">Core Competencies</h3>
+            <div class="tag-cloud">
+              <span class="tag">AI Filmmaking Pipeline</span>
+              <span class="tag">Prompt Engineering</span>
+              <span class="tag">Visual Storytelling</span>
+              <span class="tag">Cinematic Lighting</span>
+              <span class="tag">Sound Design & SFX</span>
+              <span class="tag">Multi-shot Continuity</span>
+              <span class="tag">Video Editing & Pacing</span>
+              <span class="tag">Creative Direction</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: CONTACT & COLLABORATION -->
+      <section class="card" id="contact" style="text-align: center; padding: 50px 24px; align-items: center;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.2rem;">Let’s Build Cinematic Stories</h2>
+        <p style="color: var(--text-sub); max-width: 580px; font-size: 0.95rem;">
+          Open for creative partnerships, commercial campaigns, and AI film collaborations with studios, brands, and creators worldwide.
+        </p>
+        <div class="btn-row" style="justify-content: center; margin-top: 10px;">
+          <a class="btn btn-primary" href="mailto:ltl.21s4@gmail.com">
+            ✉ ltl.21s4@gmail.com
+          </a>
+          <a class="btn" href="https://www.instagram.com/longhe.aifilm/" target="_blank" rel="noreferrer">
+            Instagram (@longhe.aifilm)
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
       <footer class="footer">
-        © <span id="year"></span> Le Thanh Long.
+        <div>© <span id="year"></span> Le Thanh Long. All rights reserved.</div>
+        <div>Visual Storyteller & AI Filmmaker</div>
       </footer>
     </div>
 
     <script>
+      // Automatically keep copyright year updated
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Horizontal reel slider scroll handler
+      function scrollSlider(direction) {
+        const track = document.getElementById("videoTrack");
+        const scrollAmount = 290;
+        track.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth"
+        });
+      }
     </script>
   </body>
 </html>
